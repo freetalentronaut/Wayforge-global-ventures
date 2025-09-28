@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en" class="antialiased">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Wayforge Global Venture — Efficient Global Sourcing & Importation</title>
+  <meta name="description" content="Wayforge Global Venture helps businesses access quality products from China and beyond—with speed, transparency, and cost-effectiveness." />
+  <meta name="author" content="Wayforge Global Venture" />
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f7fbff;
+      --surface:#ffffff;
+      --muted:#64748b;
+      --brand-1:#0f4c81; /* deep blue */
+      --brand-2:#06b6d4; /* cyan */
+      --accent:#f59e0b;  /* amber */
+    }
+
+    body { background: linear-gradient(180deg,#f7fbff, #eef6fb); color: #0f1724; font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; }
+
+    .logo-type { font-family: 'Playfair Display', serif; letter-spacing: 0.2px; }
+    .card { background: linear-gradient(180deg, rgba(15,76,129,0.03), rgba(6,182,212,0.01)); border: 1px solid rgba(15,76,129,0.06); }
+    .glass { background: rgba(255,255,255,0.6); backdrop-filter: blur(6px); border-radius: 12px; border: 1px solid rgba(255,255,255,0.55); }
+
+    /* image hover effects */
+    .img-hover { transition: transform .6s cubic-bezier(.2,.8,.2,1), filter .4s, box-shadow .4s; will-change: transform; }
+    .img-hover:hover { transform: translateY(-6px) scale(1.02); filter: saturate(1.02) brightness(.98); box-shadow: 0 20px 40px rgba(15,76,129,0.08); }
+
+    /* card hover lift */
+    .card-hover { transition: transform .36s cubic-bezier(.2,.8,.2,1), box-shadow .36s; }
+    .card-hover:hover { transform: translateY(-8px); box-shadow: 0 32px 80px rgba(15,76,129,0.06); }
+
+    /* button micro-interactions */
+    .btn-cta { transition: transform .18s ease, box-shadow .18s ease; }
+    .btn-cta:hover { transform: translateY(-4px) scale(1.02); box-shadow: 0 18px 40px rgba(6,182,212,0.12); }
+
+    /* underline animation for links */
+    .underline-anim { position: relative; display: inline-block; }
+    .underline-anim::after { content: ''; position: absolute; left:0; bottom:-6px; width:0; height:3px; background: var(--brand-2); transition: width .28s ease; border-radius:2px; }
+    .underline-anim:hover::after { width:100%; }
+
+    /* headline shimmer */
+    .headline-shimmer { position: relative; overflow: hidden; display:inline-block; }
+    .headline-shimmer::after { content: ''; position:absolute; left:-120%; top:0; width:60%; height:100%; background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,0.35), rgba(255,255,255,0)); transform: skewX(-18deg); transition: transform .9s ease; }
+    .headline-shimmer:hover::after { transform: translateX(220%); }
+
+    /* subtle floating */
+    @keyframes floaty{ 0%{transform:translateY(0)} 50%{transform:translateY(-6px)} 100%{transform:translateY(0)} }
+    .floaty { animation: floaty 6s ease-in-out infinite; }
+
+    /* accessible focus */
+    a:focus, button:focus, input:focus, textarea:focus { outline: 3px solid rgba(6,182,212,0.12); outline-offset: 3px; }
+
+    /* responsive tweaks */
+    @media (min-width:1024px) {
+      .headline-lg { font-size: 2.6rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="#home" class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-md bg-gradient-to-br from-[#0f4c81] to-[#06b6d4] flex items-center justify-center text-white shadow floaty">
+            <!-- simple icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h3m4 0h5a2 2 0 002-2V7M8 7V4a2 2 0 012-2h4a2 2 0 012 2v3"/></svg>
+          </div>
+          <div class="leading-tight">
+            <div class="text-base font-bold logo-type text-slate-900">Wayforge Global Venture</div>
+            <div class="text-xs text-slate-500">Import · Export · E-commerce</div>
+          </div>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-700">
+          <a href="#home" class="underline-anim hover:text-slate-900">Home</a>
+          <a href="#about" class="underline-anim hover:text-slate-900">About</a>
+          <a href="#services" class="underline-anim hover:text-slate-900">Services</a>
+          <a href="#process" class="underline-anim hover:text-slate-900">Process</a>
+          <a href="#contact" class="underline-anim hover:text-slate-900">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <a href="mailto:ledorprogress@gmail.com" class="hidden sm:inline-block text-sm text-slate-600">ledorprogress@gmail.com</a>
+          <a href="tel:08023936882" class="hidden md:inline-flex items-center gap-2 px-3 py-2 rounded-full bg-gradient-to-r from-[#0f4c81] to-[#06b6d4] text-white text-sm font-semibold btn-cta">Get Started</a>
+
+          <!-- mobile menu toggle -->
+          <button id="navToggle" class="md:hidden p-2 rounded-md text-slate-700" aria-expanded="false" aria-label="Open menu">
+            <svg id="navOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg id="navClose" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293A1 1 0 014.293 18.707L8.586 14.414 4.293 10.121a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Nav -->
+    <div id="mobileNav" class="md:hidden hidden bg-white/90 border-t border-slate-100">
+      <div class="px-4 py-4 space-y-2">
+        <a href="#home" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50">Home</a>
+        <a href="#about" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50">About</a>
+        <a href="#services" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50">Services</a>
+        <a href="#process" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50">Process</a>
+        <a href="#contact" class="block px-3 py-2 rounded-md text-slate-700 hover:bg-slate-50">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main>
+    <section id="home" class="relative overflow-hidden">
+      <div class="absolute inset-0">
+        <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=1a2b3c" alt="Shipping & containers" class="w-full h-full object-cover brightness-75" />
+        <div class="absolute inset-0" style="background: linear-gradient(180deg, rgba(15,76,129,0.15), rgba(6,182,212,0.03)); mix-blend-mode: multiply;"></div>
+      </div>
+
+      <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div data-aos="fade-right" data-aos-delay="120">
+            <p class="text-sm font-semibold text-[#06b6d4]">Wayforge Global Venture</p>
+            <h1 class="mt-4 text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight headline-lg headline-shimmer">Efficient Global Sourcing &amp; Importation for Your Business</h1>
+            <p class="mt-4 text-slate-200 max-w-xl">We specialize in connecting you with trusted international suppliers and managing the entire import process — from product sourcing to final delivery. Whether you're a startup or an established business, our solutions are tailored to help you grow with confidence.</p>
+
+            <div class="mt-6 flex flex-wrap gap-3">
+              <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#0f4c81] to-[#06b6d4] text-white rounded-full font-semibold shadow btn-cta">Get Started with Wayforge</a>
+              <a href="#services" class="inline-flex items-center gap-2 px-5 py-3 border border-white/10 text-white rounded-full font-semibold hover:bg-white/5 transition">Our Services</a>
+            </div>
+
+            <ul class="mt-6 flex flex-wrap gap-4 text-sm text-slate-200">
+              <li><strong>Location:</strong> Port Harcourt</li>
+              <li><strong>Contact:</strong> 08023936882</li>
+              <li><strong>Email:</strong> <a href="mailto:ledorprogress@gmail.com" class="text-[#06b6d4]">ledorprogress@gmail.com</a></li>
+            </ul>
+          </div>
+
+          <div data-aos="zoom-in" data-aos-delay="180" class="space-y-4">
+            <div class="card rounded-xl p-6 shadow-lg card-hover">
+              <h3 class="text-lg font-semibold text-slate-900">What we do — at a glance</h3>
+              <p class="text-sm text-slate-600 mt-2">Sourcing, import logistics, compliance, RMB exchange support, and e-commerce fulfillment — streamlined for African businesses.</p>
+              <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="bg-white/70 rounded-lg p-3">
+                  <div class="text-xs text-slate-600">Sourcing</div>
+                  <div class="font-semibold text-slate-900">Verified global suppliers</div>
+                </div>
+                <div class="bg-white/70 rounded-lg p-3">
+                  <div class="text-xs text-slate-600">Logistics</div>
+                  <div class="font-semibold text-slate-900">Shipping & customs</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-xl overflow-hidden card-hover">
+              <img src="sourcing.jpg" alt="Sourcing illustration" class="w-full h-56 object-cover rounded-xl img-hover" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute inset-x-0 bottom-0 pointer-events-none">
+        <svg viewBox="0 0 1440 80" class="w-full h-20"><path fill="#eef6fb" d="M0 40 C 360 120 1080 0 1440 40 L1440 80 L0 80 Z"></path></svg>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-16 sm:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Our Services</h2>
+          <p class="text-slate-600 mt-3 max-w-2xl mx-auto">At Wayforge Global Venture, we provide a complete range of services designed to make your importing process easy, fast, and reliable.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <article data-aos="fade-up" class="card rounded-xl p-5 shadow card-hover">
+            <img src="https://images.unsplash.com/photo-1542223616-4b31b1d1a3c8?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=3c4d5e" alt="Global sourcing" class="w-full h-36 object-cover rounded-md img-hover" />
+            <h4 class="mt-4 font-semibold text-slate-900">Global Product Sourcing</h4>
+            <p class="text-sm text-slate-600 mt-2">We identify and connect you with verified, trustworthy suppliers—especially in China—based on your business requirements.</p>
+          </article>
+
+          <article data-aos="fade-up" data-aos-delay="80" class="card rounded-xl p-5 shadow card-hover">
+            <img src="https://images.unsplash.com/photo-1509395176047-4a66953fd231?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=4d5e6f" alt="Logistics" class="w-full h-36 object-cover rounded-md img-hover" />
+            <h4 class="mt-4 font-semibold text-slate-900">End-to-End Import Support</h4>
+            <p class="text-sm text-slate-600 mt-2">We manage logistics, shipping, warehousing and customs procedures so your goods arrive safely and on time.</p>
+          </article>
+
+          <article data-aos="fade-up" data-aos-delay="160" class="card rounded-xl p-5 shadow card-hover">
+            <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=5e6f7g" alt="Compliance" class="w-full h-36 object-cover rounded-md img-hover" />
+            <h4 class="mt-4 font-semibold text-slate-900">Compliance & Documentation</h4>
+            <p class="text-sm text-slate-600 mt-2">Avoid costly delays and rejections. We ensure your imports meet all necessary standards and documentation requirements.</p>
+          </article>
+
+          <article data-aos="fade-up" data-aos-delay="240" class="card rounded-xl p-5 shadow card-hover">
+            <img src="https://images.unsplash.com/photo-1556741533-f6acd647d2fb?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=6f7g8h" alt="Cost optimization" class="w-full h-36 object-cover rounded-md img-hover" />
+            <h4 class="mt-4 font-semibold text-slate-900">Cost Optimization</h4>
+            <p class="text-sm text-slate-600 mt-2">We help you reduce costs through smart sourcing, negotiation, and bulk-shipping strategies.</p>
+          </article>
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div data-aos="fade-right" class="bg-white/90 rounded-xl p-6 card-hover card">
+            <h5 class="font-semibold text-slate-900">RMB Exchange Support</h5>
+            <p class="text-sm text-slate-600 mt-3">We assist with secure and compliant RMB transactions to streamline supplier payments and minimize fees.</p>
+          </div>
+
+          <div data-aos="fade-up" class="bg-white/90 rounded-xl p-6 card-hover card">
+            <h5 class="font-semibold text-slate-900">Preorder & E-commerce Fulfillment</h5>
+            <p class="text-sm text-slate-600 mt-3">Support for preorders, storage and fulfillment tailored to online sellers and marketplaces.</p>
+          </div>
+
+          <div data-aos="fade-left" class="bg-white/90 rounded-xl p-6 card-hover card">
+            <h5 class="font-semibold text-slate-900">Custom Procurement Projects</h5>
+            <p class="text-sm text-slate-600 mt-3">Have a specialized product requirement? We manage bespoke procurement projects from concept to delivery.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="py-16 sm:py-20 bg-gradient-to-b from-transparent to-white/50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">How it works</h2>
+          <p class="text-slate-600 mt-3 max-w-2xl mx-auto">A simple, reliable process that takes the complexity out of international sourcing.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div data-aos="fade-up" class="text-center p-6 rounded-xl card-hover card">
+            <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#06b6d4] to-[#0f4c81] flex items-center justify-center text-white shadow mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 7v10a2 2 0 002 2h3"/></svg>
+            </div>
+            <h4 class="font-semibold text-slate-900">1. Tell us your need</h4>
+            <p class="text-sm text-slate-600 mt-2">Share product specs, quantity, timeline and budget — we start sourcing immediately.</p>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="80" class="text-center p-6 rounded-xl card-hover card">
+            <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-[#f59e0b] to-[#ff7a59] flex items-center justify-center text-white shadow mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 8c-1.657 0-3 .895-3 2v4h6v-4c0-1.105-1.343-2-3-2z"/></svg>
+            </div>
+            <h4 class="font-semibold text-slate-900">2. We verify suppliers</h4>
+            <p class="text-sm text-slate-600 mt-2">We check credentials, factory capability and sample quality before approving orders.</p>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="160" class="text-center p-6 rounded-xl card-hover card">
+            <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center text-white shadow mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M3 7h18"/></svg>
+            </div>
+            <h4 class="font-semibold text-slate-900">3. Shipment & customs</h4>
+            <p class="text-sm text-slate-600 mt-2">We manage shipping, tracking and clearance until goods reach your door.</p>
+          </div>
+
+          <div data-aos="fade-up" data-aos-delay="240" class="text-center p-6 rounded-xl card-hover card">
+            <div class="w-16 h-16 mx-auto rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 flex items-center justify-center text-white shadow mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h4 class="font-semibold text-slate-900">4. Delivery & support</h4>
+            <p class="text-sm text-slate-600 mt-2">Receive goods, quality assurance and ongoing support for reorders and fulfillment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="py-16 sm:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">Trusted by businesses</h2>
+        <p class="text-slate-600 mt-3 max-w-2xl mx-auto">Real clients, reliable outcomes. We take pride in long-term partnerships.</p>
+
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <blockquote data-aos="fade-up" class="bg-white/90 rounded-xl p-6 card-hover card">
+            <p class="text-slate-700">"Wayforge helped us scale quickly — their sourcing and logistics were exceptional."</p>
+            <footer class="mt-4 text-sm text-slate-600">— Ledor Progress, Retailer</footer>
+          </blockquote>
+
+          <blockquote data-aos="fade-up" data-aos-delay="80" class="bg-white/90 rounded-xl p-6 card-hover card">
+            <p class="text-slate-700">"Transparent pricing and fast communication. Highly recommended for importers."</p>
+            <footer class="mt-4 text-sm text-slate-600">— E-commerce Founder</footer>
+          </blockquote>
+
+          <blockquote data-aos="fade-up" data-aos-delay="160" class="bg-white/90 rounded-xl p-6 card-hover card">
+            <p class="text-slate-700">"Their compliance team saved us time and money with proper documentation."</p>
+            <footer class="mt-4 text-sm text-slate-600">— Wholesale Distributor</footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-16 sm:py-20 bg-gradient-to-b from-transparent to-white/50">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">About Wayforge Global Venture</h2>
+        <p class="mt-4 text-slate-600">Wayforge Global Venture is a Nigerian-based sourcing and import company built to simplify the way businesses access global products. We exist to help you navigate international trade with ease—from locating reliable suppliers to ensuring smooth delivery of your goods.</p>
+
+        <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white/90 p-6 rounded-xl card-hover card">
+            <h4 class="font-semibold text-slate-900">Mission</h4>
+            <p class="text-sm text-slate-600 mt-2">To empower African businesses by making global trade simpler, smarter, and more accessible.</p>
+          </div>
+
+          <div class="bg-white/90 p-6 rounded-xl card-hover card">
+            <h4 class="font-semibold text-slate-900">Vision</h4>
+            <p class="text-sm text-slate-600 mt-2">To be Africa’s most trusted name in product sourcing and importation.</p>
+          </div>
+        </div>
+
+        <div class="mt-6 text-left bg-white/90 p-6 rounded-xl card-hover card shadow">
+          <h5 class="font-semibold text-slate-900">Our Story</h5>
+          <p class="text-sm text-slate-600 mt-2">Wayforge Global Venture is dedicated to helping businesses access quality products and grow through international trade. We specialize in sourcing and importing goods from China and other global markets, focusing on transparency, reliability, and efficiency.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-16 sm:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <h2 class="text-2xl font-extrabold text-slate-900">Let’s Get Your Import Journey Started</h2>
+            <p class="text-slate-600 mt-3 max-w-lg">Reach out to us today. Whether you need help sourcing a product or want to streamline your import process, we’re ready to assist.</p>
+
+            <div class="mt-6 space-y-4">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-[#06b6d4] flex items-center justify-center text-white">✉️</div>
+                <div>
+                  <div class="text-sm text-slate-600">Email</div>
+                  <div class="text-sm font-semibold text-slate-900">ledorprogress@gmail.com</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-[#0f4c81] flex items-center justify-center text-white">📞</div>
+                <div>
+                  <div class="text-sm text-slate-600">Phone</div>
+                  <div class="text-sm font-semibold text-slate-900">08023936882</div>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-full bg-amber-400 flex items-center justify-center text-white">📍</div>
+                <div>
+                  <div class="text-sm text-slate-600">Location</div>
+                  <div class="text-sm font-semibold text-slate-900">Port Harcourt, Nigeria</div>
+                </div>
+              </div>
+
+              <div>
+                <a href="https://wa.me/2348023936882" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 bg-green-500 text-white rounded-full hover:scale-105 transition">Message on WhatsApp</a>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-lg font-semibold text-slate-900">Contact form</h3>
+            <form onsubmit="event.preventDefault(); alert('Thanks — demo only. We will contact you shortly.');" class="mt-4 bg-white/90 p-6 rounded-xl card-hover card shadow space-y-3">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <input type="text" placeholder="Full name" required class="w-full px-3 py-2 rounded-md border border-slate-200 bg-white focus:ring-2 focus:ring-[#06b6d4]" />
+                <input type="email" placeholder="Email" required class="w-full px-3 py-2 rounded-md border border-slate-200 bg-white focus:ring-2 focus:ring-[#06b6d4]" />
+              </div>
+              <input type="tel" placeholder="Phone (optional)" class="w-full px-3 py-2 rounded-md border border-slate-200 bg-white focus:ring-2 focus:ring-[#06b6d4]" />
+              <textarea placeholder="Tell us about your requirement" rows="4" class="w-full px-3 py-2 rounded-md border border-slate-200 bg-white focus:ring-2 focus:ring-[#06b6d4]"></textarea>
+              <div class="flex items-center justify-between">
+                <button class="px-4 py-2 bg-gradient-to-r from-[#0f4c81] to-[#06b6d4] hover:from-[#0e4270] hover:to-[#05aeb8] text-white rounded-md font-semibold btn-cta">Send request</button>
+                <p class="text-xs text-slate-500">We value your privacy — demo form.</p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-10 bg-white/80 mt-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div>
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-md bg-gradient-to-br from-[#0f4c81] to-[#06b6d4] flex items-center justify-center text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 7v10a2 2 0 002 2h3"/></svg>
+              </div>
+              <div>
+                <div class="text-slate-900 font-bold logo-type">Wayforge Global Venture</div>
+                <div class="text-xs text-slate-600">Import · Export · Sourcing</div>
+              </div>
+            </div>
+            <p class="text-sm text-slate-600 mt-4 max-w-xs">Wayforge Global Venture is a professional import–export company dedicated to helping businesses access quality products and grow through international trade.</p>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-slate-900 mb-3">Services</h4>
+            <ul class="text-sm space-y-2 text-slate-700">
+              <li><a href="#services" class="hover:text-slate-900">Global Product Sourcing</a></li>
+              <li><a href="#services" class="hover:text-slate-900">Import Support & Logistics</a></li>
+              <li><a href="#services" class="hover:text-slate-900">Compliance & Documentation</a></li>
+              <li><a href="#services" class="hover:text-slate-900">Cost Optimization</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-semibold text-slate-900 mb-3">Contact</h4>
+            <p class="text-sm text-slate-700">Email: <a href="mailto:ledorprogress@gmail.com" class="text-[#0f4c81]">ledorprogress@gmail.com</a></p>
+            <p class="text-sm text-slate-700 mt-1">Phone: 08023936882</p>
+            <p class="text-sm text-slate-700 mt-2">Location: Port Harcourt, Nigeria</p>
+            <div class="mt-4 flex items-center gap-2">
+              <a href="#" class="text-slate-700 hover:text-slate-900 text-sm">Privacy</a>
+              <a href="#" class="text-slate-700 hover:text-slate-900 text-sm">Terms</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 border-t border-slate-200 pt-6 text-sm text-slate-600 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div>&copy; <span id="year"></span> Wayforge Global Venture — All rights reserved.</div>
+          <div>Designed by <a href="https://www.talentronaut.in" target="_blank" rel="noopener noreferrer" class="text-[#06b6d4] underline">Talentronaut Technologies</a></div>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Floating WhatsApp CTA -->
+  <a href="https://wa.me/2348023936882" target="_blank" rel="noopener noreferrer" class="fixed right-6 bottom-6 z-50 bg-green-500 rounded-full p-3 shadow-lg transform transition hover:scale-105" aria-label="Message Wayforge on WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.478A11.94 11.94 0 0012 0C5.373 0 .001 5.373.001 12a11.91 11.91 0 001.62 6.01L0 24l6.11-1.59A11.95 11.95 0 0012 24c6.627 0 12-5.373 12-12 0-3.2-1.225-6.14-3.48-8.522zM12 22.1c-1.46 0-2.892-.38-4.16-1.1l-.3-.16-3.63.96.98-3.55-.19-.32A8.09 8.09 0 013.9 12c0-4.5 3.6-8.1 8.1-8.1 4.48 0 8.1 3.6 8.1 8.1 0 4.5-3.6 8.1-8.1 8.1z"/></svg>
+  </a>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // AOS init
+    AOS.init({ duration: 700, once: true, offset: 60, easing: 'ease-in-out' });
+
+    // mobile nav toggle
+    const navToggle = document.getElementById('navToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const navOpen = document.getElementById('navOpen');
+    const navClose = document.getElementById('navClose');
+    if (navToggle) {
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', (!expanded).toString());
+        mobileNav.classList.toggle('hidden');
+        navOpen.classList.toggle('hidden');
+        navClose.classList.toggle('hidden');
+      });
+    }
+
+    // lazy load images where supported & stagger AOS
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('img').forEach(img => { if (!('loading' in HTMLImageElement.prototype)) img.loading = 'lazy'; });
+      document.querySelectorAll('[data-aos]').forEach((el, idx) => {
+        if (!el.getAttribute('data-aos-delay')) el.setAttribute('data-aos-delay', (idx % 8) * 60);
+      });
+    });
+
+    // keyboard accessibility: close mobile menu with escape
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileNav && !mobileNav.classList.contains('hidden')) {
+        mobileNav.classList.add('hidden');
+        navOpen.classList.remove('hidden'); navClose.classList.add('hidden'); navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  </script>
+
+  <!-- NOTES:
+    - Replace Unsplash URLs with your own images for production (license check).
+    - Hook contact form to a backend (Formspree/EmailJS) and add server-side validation.
+    - Consider compiling Tailwind for performance and removing unused classes.
+  -->
+</body>
+</html>
